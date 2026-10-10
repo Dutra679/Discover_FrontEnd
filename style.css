@@ -31,6 +31,7 @@
 }
 
 body {
+  display: flow-root;
   min-height: 100vh;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -43,9 +44,11 @@ body {
 }
 
 #container {
-  width: 360px;
-  margin: 56px auto 0;
+  width: 100%;
+  max-width: 588px;
+  margin: 32px auto 0;
   padding: 0 24px 40px;
+  animation: arrive 500ms ease-out both;
 }
 
 #profile {
@@ -107,6 +110,7 @@ body {
   background-color: #ffffff;
   box-shadow: 0 2px 8px #00000026;
   cursor: pointer;
+  transition: transform 200ms ease, outline 200ms ease;
 }
 
 #theme-toggle:hover {
@@ -154,6 +158,7 @@ body {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  transition: background-color 200ms ease, border-color 200ms ease;
 }
 
 .links a:hover {
@@ -181,6 +186,7 @@ body {
   height: 48px;
   border-radius: 50%;
   color: inherit;
+  transition: background-color 200ms ease;
 }
 
 #social-links a:hover {
@@ -207,4 +213,44 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--focus-color);
   outline-offset: 4px;
+}
+
+@media (min-width: 700px) {
+  #container {
+    margin-top: 56px;
+  }
+
+  body {
+    background-image:
+      radial-gradient(ellipse at 25% 0%, var(--glow-start), transparent 55%),
+      radial-gradient(ellipse at 85% 100%, var(--glow-end), transparent 60%);
+  }
+}
+
+@media (max-width: 360px) {
+  #container {
+    margin-top: 16px;
+    padding-inline: 20px;
+  }
+
+  .links a {
+    padding-inline: 16px;
+  }
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #container {
+    animation: none;
+  }
+
+  #theme-toggle,
+  .links a,
+  #social-links a {
+    transition: none;
+  }
 }
