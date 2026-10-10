@@ -50,3 +50,80 @@ body {
   color: #c4bfce;
   font-size: 13px;
 }
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+  list-style: none;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+  padding: 16px 20px;
+  border: 1px solid #ffffff66;
+  border-radius: 8px;
+  color: inherit;
+  background-color: #ffffff0d;
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.links a:hover {
+  border-color: #ffffff;
+  background-color: #ffffff1a;
+}
+
+.links a span {
+  color: #c4bfce;
+  font-size: 20px;
+}
+
+#social-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: inherit;
+}
+
+#social-links a:hover {
+  background-color: #ffffff1a;
+}
+
+#social-links svg {
+  width: 24px;
+  height: 24px;
+}
+
+footer {
+  color: #c4bfce;
+  text-align: center;
+  font-size: 13px;
+}
+
+footer a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+a:focus-visible {
+  outline: 2px solid #caa5ff;
+  outline-offset: 4px;
+}
